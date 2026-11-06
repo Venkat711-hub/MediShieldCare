@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Checks — MediShield Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="top-alert">
+  🚨 India Emergency: <strong>112</strong> &nbsp;|&nbsp; 🚑 Ambulance: <strong>108</strong> &nbsp;|&nbsp; 🧓 Elder Helpline: <strong>14567</strong>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🏥</span>
+      <div class="logo-text">
+        <span class="logo-title">MediShield Care</span>
+        <span class="logo-sub">Senior Health &amp; Emergency Directory</span>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="emergency.html">Emergency</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="medicine-safety.html">Medicine Safety</a>
+      <a href="monthly-checks.html" class="active">Monthly Checks</a>
+      <a href="emergency.html" class="nav-sos-btn" id="navSOSBtn">🆘 SOS</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero" id="top">
+  <div class="container page-hero-content">
+    <div class="page-badge">📅 MONTHLY HEALTH TRACKER</div>
+    <h1>8 Things Seniors Should<br /><span class="hero-accent">Check Every Month</span></h1>
+    <p>Small routine checks can help identify health concerns early — before they become emergencies. Run through this list once a month.</p>
+    <div class="hero-actions">
+      <a href="#checks" class="btn btn-white btn-lg">📋 Start Monthly Check</a>
+      <a href="#maintain" class="btn btn-outline btn-lg">🔄 Maintain Directory</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MONTHLY CHECKLIST ═══ -->
+<section class="section section-bg" id="checks">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label amber">MONTHLY TRACKER</span>
+      <h2>8 Monthly Health Checks for Seniors</h2>
+      <p class="section-desc">Go through each item every month. Tick off as you complete them. Note any concerns to discuss with your doctor.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:start;">
+      <div>
+        <!-- Interactive checklist -->
+        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
+          <div style="background:var(--primary);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="color:#fff;font-weight:800;font-size:.95rem;">📅 Monthly Checklist — <span id="currentMonth"></span></span>
+            <button onclick="resetChecklist()" style="background:rgba(255,255,255,.18);border:none;color:#fff;padding:5px 12px;border-radius:50px;font-size:.75rem;font-weight:700;cursor:pointer;">Reset</button>
+          </div>
+
+          <div class="checks-list" id="checklistContainer">
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">1</div>
+              <div class="check-emoji">⚖️</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Body Weight</h4>
+                <p>Sudden weight loss can signal muscle wasting; rapid gain points to fluid retention.</p>
+              </div>
+              <input type="checkbox" data-store="chk_weight" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">2</div>
+              <div class="check-emoji">🩺</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Blood Pressure</h4>
+                <p>Tracking your resting readings at home catches hypertension and heart strain early.</p>
+              </div>
+              <input type="checkbox" data-store="chk_bp" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">3</div>
+              <div class="check-emoji">💊</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Medicine Supplies</h4>
+                <p>Auditing your pill bottles prevents running out of prescriptions or taking expired doses.</p>
+              </div>
+              <input type="checkbox" data-store="chk_meds" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">4</div>
+              <div class="check-emoji">🦶</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Foot &amp; Skin Health</h4>
+                <p>Inspecting the soles of your feet for silent cuts, blisters or dry cracks — especially important for diabetics.</p>
+              </div>
+              <input type="checkbox" data-store="chk_feet" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">5</div>
+              <div class="check-emoji">🏦</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Financial Statements</h4>
+                <p>Reviewing bank records catches unauthorized charges and prevents common elder scams and fraud.</p>
+              </div>
+              <input type="checkbox" data-store="chk_finance" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">6</div>
+              <div class="check-emoji">🦵</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Leg Strength</h4>
+                <p>Doing a quick sit-to-stand check monitors lower-body muscle preservation and balance / mobility.</p>
+              </div>
+              <input type="checkbox" data-store="chk_legs" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer;">
+              <div class="check-num">7</div>
+              <div class="check-emoji">🏠</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Home Trip Hazards</h4>
+                <p>Scanning hallways and checking stairs for loose rugs, cords, clutter or poor lighting that could cause falls.</p>
+              </div>
+              <input type="checkbox" data-store="chk_hazards" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+            <label class="check-row" style="cursor:pointer; border-bottom:none;">
+              <div class="check-num">8</div>
+              <div class="check-emoji">🧠</div>
+              <div class="check-text" style="flex:1;">
+                <h4>Memory / Cognitive Changes</h4>
+                <p>Noting down any recurring brain fog or focus issues to discuss with your doctor at the next visit.</p>
+              </div>
+              <input type="checkbox" data-store="chk_memory" style="width:22px;height:22px;accent-color:var(--primary);flex-shrink:0;" />
+            </label>
+
+          </div>
+
+          <div style="padding:16px 20px;border-top:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            <div id="checkProgress" style="font-size:.88rem;font-weight:700;color:var(--text-mid);"></div>
+            <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print Checklist</button>
+          </div>
+        </div>
+
+        <!-- Notes area -->
+        <div style="margin-top:20px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="background:var(--teal);padding:11px 16px;color:#fff;font-weight:800;font-size:.88rem;">📝 Notes for Doctor Visit</div>
+          <div style="padding:16px;">
+            <div class="form-field">
+              <label>Concerns to discuss at next appointment</label>
+              <textarea data-store="chk_doctor_notes" placeholder="Note anything unusual you noticed this month — weight change, new symptoms, medication concerns, questions for the doctor…" style="min-height:100px;"></textarea>
+            </div>
+            <div class="form-field">
+              <label>Next Doctor Appointment</label>
+              <input type="date" data-store="chk_next_appt" />
+            </div>
+            <div class="save-status saved mt-8" style="font-size:.78rem;">✅ Notes saved automatically</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img src="images/image4.jpg" alt="8 Things Seniors Should Keep Track of Every Month infographic" style="border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOOD PRESSURE LOG ═══ -->
+<section class="section section-white" id="bp-log">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">BP &amp; WEIGHT LOG</span>
+      <h2>Monthly Blood Pressure &amp; Weight Log</h2>
+      <p class="section-desc">Record readings as advised by your doctor. Bring this log to every appointment.</p>
+    </div>
+    <div style="overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);">
+      <table class="pharmacy-table" style="min-width:650px;">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>BP (Systolic)</th>
+            <th>BP (Diastolic)</th>
+            <th>Pulse (bpm)</th>
+            <th>Weight (kg)</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="date" data-store="bp1_date" /></td><td><input type="number" data-store="bp1_sys" placeholder="e.g. 120" /></td><td><input type="number" data-store="bp1_dia" placeholder="e.g. 80" /></td><td><input type="number" data-store="bp1_pulse" placeholder="e.g. 72" /></td><td><input type="number" data-store="bp1_wt" placeholder="e.g. 68" step="0.1" /></td><td><input type="text" data-store="bp1_notes" placeholder="Any symptoms?" /></td></tr>
+          <tr><td><input type="date" data-store="bp2_date" /></td><td><input type="number" data-store="bp2_sys" placeholder="e.g. 120" /></td><td><input type="number" data-store="bp2_dia" placeholder="e.g. 80" /></td><td><input type="number" data-store="bp2_pulse" placeholder="e.g. 72" /></td><td><input type="number" data-store="bp2_wt" placeholder="e.g. 68" step="0.1" /></td><td><input type="text" data-store="bp2_notes" placeholder="Any symptoms?" /></td></tr>
+          <tr><td><input type="date" data-store="bp3_date" /></td><td><input type="number" data-store="bp3_sys" placeholder="e.g. 120" /></td><td><input type="number" data-store="bp3_dia" placeholder="e.g. 80" /></td><td><input type="number" data-store="bp3_pulse" placeholder="e.g. 72" /></td><td><input type="number" data-store="bp3_wt" placeholder="e.g. 68" step="0.1" /></td><td><input type="text" data-store="bp3_notes" placeholder="Any symptoms?" /></td></tr>
+          <tr><td><input type="date" data-store="bp4_date" /></td><td><input type="number" data-store="bp4_sys" placeholder="e.g. 120" /></td><td><input type="number" data-store="bp4_dia" placeholder="e.g. 80" /></td><td><input type="number" data-store="bp4_pulse" placeholder="e.g. 72" /></td><td><input type="number" data-store="bp4_wt" placeholder="e.g. 68" step="0.1" /></td><td><input type="text" data-store="bp4_notes" placeholder="Any symptoms?" /></td></tr>
+          <tr><td><input type="date" data-store="bp5_date" /></td><td><input type="number" data-store="bp5_sys" placeholder="e.g. 120" /></td><td><input type="number" data-store="bp5_dia" placeholder="e.g. 80" /></td><td><input type="number" data-store="bp5_pulse" placeholder="e.g. 72" /></td><td><input type="number" data-store="bp5_wt" placeholder="e.g. 68" step="0.1" /></td><td><input type="text" data-store="bp5_notes" placeholder="Any symptoms?" /></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note note-info mt-16">
+      <span class="note-icon">📊</span>
+      Normal BP for most adults: 120/80 mmHg. Consult your doctor if readings consistently above 140/90 or below 90/60. Normal resting heart rate: 60–100 bpm.
+    </div>
+    <div class="action-row mt-16">
+      <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print BP Log</button>
+      <span class="save-status saved">✅ Auto-saved</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAINTAIN DIRECTORY ═══ -->
+<section class="section section-bg2" id="maintain">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label green">MAINTAIN YOUR DIRECTORY</span>
+      <h2>How to Use and Maintain This Directory</h2>
+      <p class="section-desc">Keep it somewhere visible and make sure a trusted person knows where it is.</p>
+    </div>
+
+    <div class="maintain-flow">
+      <div class="maintain-step">
+        <div class="ms-num">1</div>
+        <div class="ms-icon">✍️</div>
+        <h3>Complete It</h3>
+        <p>Write names, phone numbers, addresses, allergies and emergency contacts in full.</p>
+      </div>
+      <div class="maintain-step">
+        <div class="ms-num">2</div>
+        <div class="ms-icon">✅</div>
+        <h3>Verify It</h3>
+        <p>Call the pharmacy, clinic and hospital to confirm details are correct before an emergency.</p>
+      </div>
+      <div class="maintain-step">
+        <div class="ms-num">3</div>
+        <div class="ms-icon">📤</div>
+        <h3>Share It</h3>
+        <p>Give a copy to a family member or caregiver — with the senior's permission.</p>
+      </div>
+      <div class="maintain-step">
+        <div class="ms-num">4</div>
+        <div class="ms-icon">🔄</div>
+        <h3>Update It</h3>
+        <p>Review after every medicine or contact change — and at least every few months.</p>
+      </div>
+      <div class="maintain-step">
+        <div class="ms-num">5</div>
+        <div class="ms-icon">🔒</div>
+        <h3>Keep It Private</h3>
+        <p>Store personal and medical details securely. Share only with trusted people.</p>
+      </div>
+    </div>
+
+    <div class="note note-teal mt-32">
+      <span class="note-icon">💡</span>
+      <strong>Pro Tip:</strong> Keep a printed copy near the phone, and a photo of the key contact page on a trusted caregiver's smartphone. The SOS button uses your saved contact for instant WhatsApp alerts.
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>BE PREPARED. GET HELP FASTER. STAY SAFE.</h2>
+    <p>A well-maintained directory connects seniors with the right people, medicines and support when they need it most.</p>
+    <div class="cta-actions">
+      <button class="btn btn-red btn-lg" onclick="SOS.open()">🆘 Test SOS System</button>
+      <a href="pharmacy.html" class="btn btn-white btn-lg">📋 My Directory</a>
+      <button class="btn btn-outline-white btn-lg" onclick="window.print()">🖨️ Print All</button>
+    </div>
+    <p style="color:rgba(255,255,255,.55);font-size:.88rem;margin-top:16px;font-style:italic;">Stay prepared • Stay safe • Stay connected</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo" style="margin-bottom:10px;"><span class="logo-icon">🏥</span><div class="logo-text"><span class="logo-title">MediShield Care</span><span class="logo-sub">Senior Health &amp; Emergency Directory</span></div></div><p>Stay prepared • Stay safe • Stay connected</p></div>
+      <div class="footer-links-grid">
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="emergency.html">Emergency &amp; SOS</a><a href="pharmacy.html">Pharmacy &amp; Directory</a><a href="medicine-safety.html">Medicine Safety</a><a href="monthly-checks.html">Monthly Checks</a></div>
+        <div class="footer-col"><h4>Quick Dial</h4><a href="tel:112">112 — All Emergencies</a><a href="tel:108">108 — Ambulance</a><a href="tel:100">100 — Police</a><a href="tel:14567">14567 — Senior Helpline</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 MediShield Care | PS5 Hackathon – Problem 5</span><a href="#top" class="back-to-top">↑ Top</a></div>
+  </div>
+</footer>
+
+<button class="sos-fab" id="sosFab" aria-label="Emergency SOS"><span class="fab-icon">🆘</span><span class="fab-text">SOS</span></button>
+<div class="sos-overlay hidden" id="sosOverlay" role="dialog" aria-modal="true">
+  <div class="sos-modal">
+    <div class="sos-modal-header"><div class="sos-modal-header-left"><span class="sos-flash-icon">🚨</span><div><div class="sos-modal-title">Emergency SOS Activated</div><div class="sos-modal-subtitle">Your location is being prepared</div></div></div><button class="sos-close" id="sosCloseBtn">✕</button></div>
+    <div class="sos-modal-body">
+      <div class="location-box"><div class="location-box-header">📍 YOUR CURRENT LOCATION</div><div class="location-status" id="sosLocationStatus">Detecting location…</div><div class="location-coords font-mono" id="sosCoords"></div><div class="location-actions"><button class="loc-btn primary" id="sosGetLocation">🔄 Refresh</button><a class="loc-btn" id="sosLocationForMaps" href="#" target="_blank">🗺️ Map</a><button class="loc-btn" id="sosCopyBtn">📋 Copy</button></div></div>
+      <div class="call-grid"><a href="tel:112" class="call-btn call-red"><span class="call-icon">🆘</span><span class="call-info"><span class="call-num">112</span><span class="call-label">All Emergencies</span></span></a><a href="tel:108" class="call-btn call-orange"><span class="call-icon">🚑</span><span class="call-info"><span class="call-num">108</span><span class="call-label">Ambulance</span></span></a><a href="tel:100" class="call-btn call-blue"><span class="call-icon">👮</span><span class="call-info"><span class="call-num">100</span><span class="call-label">Police</span></span></a><a href="tel:14567" class="call-btn call-teal"><span class="call-icon">🧓</span><span class="call-info"><span class="call-num">14567</span><span class="call-label">Senior Helpline</span></span></a></div>
+      <div class="share-section mt-16"><div class="share-title">📲 SHARE YOUR LOCATION</div><div class="share-buttons"><a id="sosWhatsApp" href="#" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp Emergency Contact</a><a id="sosMaps" href="#" target="_blank" class="share-btn share-maps">🗺️ Google Maps</a></div><div class="sos-contact-row" id="sosSavedContact"></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Set current month label
+document.getElementById('currentMonth').textContent =
+  new Date().toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+
+// Checklist progress
+function updateProgress() {
+  const checks = document.querySelectorAll('#checklistContainer input[type="checkbox"]');
+  const done = Array.from(checks).filter(c => c.checked).length;
+  const el = document.getElementById('checkProgress');
+  if (el) el.textContent = `${done} of ${checks.length} checks completed`;
+}
+
+function resetChecklist() {
+  if (!confirm('Reset all checkboxes for this month?')) return;
+  document.querySelectorAll('#checklistContainer input[type="checkbox"]').forEach(c => {
+    c.checked = false;
+    try { localStorage.removeItem(c.dataset.store); } catch(e) {}
+  });
+  updateProgress();
+}
+
+// Wire up checkboxes after shared.js loads
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelectorAll('#checklistContainer input[type="checkbox"]').forEach(cb => {
+      cb.checked = Store.get(cb.dataset.store) === 'true';
+      cb.addEventListener('change', () => {
+        Store.set(cb.dataset.store, cb.checked);
+        updateProgress();
+      });
+    });
+    updateProgress();
+  }, 100);
+});
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
+

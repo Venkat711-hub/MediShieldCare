@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharmacy &amp; My Directory — MediShield Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="top-alert">
+  🚨 India Emergency: <strong>112</strong> &nbsp;|&nbsp; 🚑 Ambulance: <strong>108</strong> &nbsp;|&nbsp; 🧓 Elder Helpline: <strong>14567</strong>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🏥</span>
+      <div class="logo-text">
+        <span class="logo-title">MediShield Care</span>
+        <span class="logo-sub">Senior Health &amp; Emergency Directory</span>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="emergency.html">Emergency</a>
+      <a href="pharmacy.html" class="active">Pharmacy</a>
+      <a href="medicine-safety.html">Medicine Safety</a>
+      <a href="monthly-checks.html">Monthly Checks</a>
+      <a href="emergency.html" class="nav-sos-btn" id="navSOSBtn">🆘 SOS</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero" id="top">
+  <div class="container page-hero-content">
+    <div class="page-badge">📋 INTERACTIVE DIRECTORY</div>
+    <h1>Pharmacy &amp; <span class="hero-accent">Healthcare Directory</span></h1>
+    <p>Fill in your personal healthcare contacts below — doctor, pharmacy, hospital and more. <strong>Everything saves automatically</strong> in your browser. Print any time.</p>
+    <div class="hero-actions">
+      <a href="#contacts" class="btn btn-white btn-lg">📝 My Contacts</a>
+      <a href="#pharmacy-table" class="btn btn-outline btn-lg">💊 Pharmacy Directory</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PERSONAL CONTACTS ═══ -->
+<section class="section section-white" id="contacts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">MY CONTACTS</span>
+      <h2>Personal Healthcare Contact Directory</h2>
+      <p class="section-desc">Fill in each field. Data saves automatically to your browser. No internet needed after first load.</p>
+    </div>
+
+    <div class="action-row">
+      <span class="save-status saved" id="saveStatus">✅ Saved automatically</span>
+      <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print Directory</button>
+      <button class="btn btn-outline btn-sm" onclick="Store.clearAll('med_')">🗑️ Clear All Saved Data</button>
+    </div>
+
+    <div class="directory-grid mt-24">
+
+      <div class="contact-card">
+        <div class="contact-card-header red">🆘 Primary Emergency Contact</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Full Name</label><input type="text" data-store="med_emg_name_1" placeholder="e.g. Priya Sharma" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_emg_phone_1" placeholder="e.g. 9876543210" /></div>
+          <div class="form-field"><label>Relation</label><input type="text" data-store="med_emg_relation_1" placeholder="e.g. Daughter" /></div>
+          <div class="form-field"><label>WhatsApp</label><input type="tel" data-store="med_emg_wa_1" placeholder="Same or different number?" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header orange">👥 Secondary Emergency Contact</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Full Name</label><input type="text" data-store="med_emg_name_2" placeholder="e.g. Ravi Sharma" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_emg_phone_2" placeholder="e.g. 9876543211" /></div>
+          <div class="form-field"><label>Relation</label><input type="text" data-store="med_emg_relation_2" placeholder="e.g. Son" /></div>
+          <div class="form-field"><label>WhatsApp</label><input type="tel" data-store="med_emg_wa_2" placeholder="WhatsApp number" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">👨‍⚕️ Family Doctor / General Physician</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Doctor Name</label><input type="text" data-store="med_dr_name" placeholder="e.g. Dr. K. Rajan" /></div>
+          <div class="form-field"><label>Specialisation</label><input type="text" data-store="med_dr_spec" placeholder="e.g. General Physician" /></div>
+          <div class="form-field"><label>Clinic / Hospital</label><input type="text" data-store="med_dr_clinic" placeholder="e.g. Rajan Clinic" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_dr_phone" placeholder="Clinic number" /></div>
+          <div class="form-field"><label>Timings</label><input type="text" data-store="med_dr_timing" placeholder="e.g. Mon–Sat 9am–1pm" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">🏥 Nearest Hospital / Emergency Dept.</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Hospital Name</label><input type="text" data-store="med_hosp_name" placeholder="e.g. Apollo Hospital" /></div>
+          <div class="form-field"><label>Address</label><input type="text" data-store="med_hosp_addr" placeholder="Full address" /></div>
+          <div class="form-field"><label>Phone (Reception)</label><input type="tel" data-store="med_hosp_phone" placeholder="Main number" /></div>
+          <div class="form-field"><label>Emergency Dept.</label><input type="tel" data-store="med_hosp_emg" placeholder="Emergency direct line" /></div>
+          <div class="form-field"><label>Distance</label><input type="text" data-store="med_hosp_dist" placeholder="e.g. 2.5 km, 10 min" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header teal">💊 Regular Pharmacy</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Pharmacy Name</label><input type="text" data-store="med_rx_name" placeholder="e.g. MedPlus Pharmacy" /></div>
+          <div class="form-field"><label>Address</label><input type="text" data-store="med_rx_addr" placeholder="e.g. Shop 3, Main Road" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_rx_phone" placeholder="Pharmacy number" /></div>
+          <div class="form-field"><label>Opening Hours</label><input type="text" data-store="med_rx_timing" placeholder="e.g. 8am–10pm daily" /></div>
+          <div class="form-field"><label>Home Delivery?</label>
+            <select data-store="med_rx_delivery">
+              <option value="">Select…</option>
+              <option value="yes">✅ Yes — delivery available</option>
+              <option value="no">❌ No delivery</option>
+              <option value="unknown">❓ Confirm with pharmacy</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header purple">🌙 24-Hour Pharmacy</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Pharmacy Name</label><input type="text" data-store="med_rx24_name" placeholder="e.g. Apollo Pharmacy" /></div>
+          <div class="form-field"><label>Address</label><input type="text" data-store="med_rx24_addr" placeholder="Full address" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_rx24_phone" placeholder="24-hour number" /></div>
+          <div class="form-field"><label>Notes</label><input type="text" data-store="med_rx24_notes" placeholder="e.g. Night bell required" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header green">🩻 Specialist Doctor</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Doctor Name</label><input type="text" data-store="med_sp_name" placeholder="e.g. Dr. S. Nair" /></div>
+          <div class="form-field"><label>Specialisation</label><input type="text" data-store="med_sp_spec" placeholder="e.g. Cardiologist" /></div>
+          <div class="form-field"><label>Hospital</label><input type="text" data-store="med_sp_hosp" placeholder="e.g. Fortis Hospital" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_sp_phone" placeholder="Appointment number" /></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">🧪 Diagnostic Lab / Test Centre</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Lab Name</label><input type="text" data-store="med_lab_name" placeholder="e.g. SRL Diagnostics" /></div>
+          <div class="form-field"><label>Address</label><input type="text" data-store="med_lab_addr" placeholder="Full address" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_lab_phone" placeholder="Lab number" /></div>
+          <div class="form-field"><label>Home Collection?</label>
+            <select data-store="med_lab_collection">
+              <option value="">Select…</option>
+              <option value="yes">✅ Yes — home collection available</option>
+              <option value="no">❌ Visit lab in person</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">🦷 Dental Care</div>
+        <div class="contact-card-body">
+          <div class="form-field"><label>Dentist Name</label><input type="text" data-store="med_dent_name" placeholder="e.g. Dr. Preethi" /></div>
+          <div class="form-field"><label>Clinic</label><input type="text" data-store="med_dent_clinic" placeholder="Clinic name and address" /></div>
+          <div class="form-field"><label>Phone</label><input type="tel" data-store="med_dent_phone" placeholder="Clinic number" /></div>
+        </div>
+      </div>
+
+    </div><!-- end directory-grid -->
+
+    <!-- Medical Info -->
+    <div style="margin-top:28px;">
+      <div class="contact-card">
+        <div class="contact-card-header red">🩺 Important Medical Information — Keep Updated</div>
+        <div class="contact-card-body" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <div class="form-field"><label>Patient Full Name</label><input type="text" data-store="med_patient_name" placeholder="Senior citizen's name" /></div>
+          <div class="form-field"><label>Date of Birth</label><input type="date" data-store="med_dob" /></div>
+          <div class="form-field"><label>Blood Group</label><input type="text" data-store="med_blood" placeholder="e.g. O+" /></div>
+          <div class="form-field"><label>Known Allergies</label><input type="text" data-store="med_allergies" placeholder="e.g. Penicillin, Nuts, Latex" /></div>
+          <div class="form-field"><label>Major Medical Conditions</label><input type="text" data-store="med_conditions" placeholder="e.g. Diabetes Type 2, Hypertension" /></div>
+          <div class="form-field"><label>Insurance / Card No.</label><input type="text" data-store="med_insurance" placeholder="e.g. Ayushman Bharat No." /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note note-success mt-24">
+      <span class="note-icon">✅</span>
+      <strong>Auto-Save Active:</strong> All fields are automatically saved to your browser's local storage. Your data never leaves your device. Print anytime using the Print button above.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHARMACY TABLE ═══ -->
+<section class="section section-bg2" id="pharmacy-table">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label teal">PHARMACY DIRECTORY</span>
+      <h2>Pharmacy &amp; Healthcare Services Table</h2>
+      <p class="section-desc">Fill in the services you use. All fields save automatically. Confirm details with each service provider before relying on them.</p>
+    </div>
+
+    <div class="pharmacy-table-wrap">
+      <table class="pharmacy-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Name / Location</th>
+            <th>Phone Number</th>
+            <th>Hours / Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>💊 Regular Pharmacy</td>
+            <td><input type="text" data-store="pt_rx1_name" placeholder="Pharmacy name &amp; address" /></td>
+            <td><input type="tel" data-store="pt_rx1_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_rx1_notes" placeholder="Opening hours / delivery" /></td>
+          </tr>
+          <tr>
+            <td>🌙 24-Hour Pharmacy</td>
+            <td><input type="text" data-store="pt_rx2_name" placeholder="Pharmacy name &amp; address" /></td>
+            <td><input type="tel" data-store="pt_rx2_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_rx2_notes" placeholder="Night-time availability" /></td>
+          </tr>
+          <tr>
+            <td>👨‍⚕️ Family Doctor</td>
+            <td><input type="text" data-store="pt_dr_name" placeholder="Doctor name &amp; clinic" /></td>
+            <td><input type="tel" data-store="pt_dr_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_dr_notes" placeholder="Clinic timings" /></td>
+          </tr>
+          <tr>
+            <td>🏥 Nearest Hospital</td>
+            <td><input type="text" data-store="pt_hosp_name" placeholder="Hospital name &amp; address" /></td>
+            <td><input type="tel" data-store="pt_hosp_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_hosp_notes" placeholder="Emergency department" /></td>
+          </tr>
+          <tr>
+            <td>🩻 Specialist</td>
+            <td><input type="text" data-store="pt_sp_name" placeholder="Specialist &amp; hospital" /></td>
+            <td><input type="tel" data-store="pt_sp_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_sp_notes" placeholder="Appointment required" /></td>
+          </tr>
+          <tr>
+            <td>👁️ Eye Specialist</td>
+            <td><input type="text" data-store="pt_eye_name" placeholder="Eye clinic &amp; address" /></td>
+            <td><input type="tel" data-store="pt_eye_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_eye_notes" placeholder="Vision care" /></td>
+          </tr>
+          <tr>
+            <td>🧪 Diagnostic Lab</td>
+            <td><input type="text" data-store="pt_lab_name" placeholder="Lab name &amp; address" /></td>
+            <td><input type="tel" data-store="pt_lab_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_lab_notes" placeholder="Home collection?" /></td>
+          </tr>
+          <tr>
+            <td>🦷 Dental Care</td>
+            <td><input type="text" data-store="pt_dent_name" placeholder="Dentist &amp; clinic" /></td>
+            <td><input type="tel" data-store="pt_dent_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_dent_notes" placeholder="Regular check-ups" /></td>
+          </tr>
+          <tr>
+            <td>🏃 Physiotherapy</td>
+            <td><input type="text" data-store="pt_physio_name" placeholder="Physiotherapist &amp; clinic" /></td>
+            <td><input type="tel" data-store="pt_physio_phone" placeholder="Phone number" /></td>
+            <td><input type="text" data-store="pt_physio_notes" placeholder="Session days" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note note-warn mt-16">
+      <span class="note-icon">⚠️</span>
+      Before relying on any pharmacy or service, confirm its current phone number, address, opening hours and delivery options in person or by phone.
+    </div>
+
+    <div class="action-row mt-16">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Print Directory</button>
+      <span class="save-status saved" id="saveStatus2">✅ Auto-saved</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHARMACY TIPS ═══ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label teal">TIPS</span>
+      <h2>Smart Pharmacy Tips for Seniors</h2>
+      <p class="section-desc">Simple habits that help seniors get the most from pharmacy services safely.</p>
+    </div>
+    <div class="tip-list">
+      <div class="tip-item">
+        <span class="tip-num">01</span>
+        <div><strong>Always carry your medicine list</strong><p>Show it to every pharmacist, doctor and specialist — including when visiting a new provider.</p></div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">02</span>
+        <div><strong>Ask about generics (Jan Aushadhi)</strong><p>Generic medicines contain the same active ingredient at significantly lower cost. Government Jan Aushadhi stores offer 50–90% lower prices. Find your nearest at janaushadhi.gov.in.</p></div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">03</span>
+        <div><strong>Always check the expiry date</strong><p>Before purchasing and before taking — always check the expiry date printed on the package.</p></div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">04</span>
+        <div><strong>Ask about home delivery</strong><p>Many pharmacies offer regular home delivery for prescriptions. Ask your pharmacist and arrange a standing order for your monthly medicines.</p></div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">05</span>
+        <div><strong>Confirm before switching brands</strong><p>Even if medicines appear similar, do not switch brands without asking your doctor or pharmacist first. Formulations can differ.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>DIRECTORY SAVED. STAY PREPARED.</h2>
+    <p>Your contacts are saved in this browser. Print a copy to keep near your phone.</p>
+    <div class="cta-actions">
+      <button class="btn btn-white btn-lg" onclick="window.print()">🖨️ Print My Directory</button>
+      <a href="medicine-safety.html" class="btn btn-outline-white btn-lg">💊 Medicine Safety →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:10px;"><span class="logo-icon">🏥</span><div class="logo-text"><span class="logo-title">MediShield Care</span><span class="logo-sub">Senior Health &amp; Emergency Directory</span></div></div>
+        <p>Stay prepared • Stay safe • Stay connected</p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="emergency.html">Emergency &amp; SOS</a><a href="pharmacy.html">Pharmacy &amp; Directory</a><a href="medicine-safety.html">Medicine Safety</a><a href="monthly-checks.html">Monthly Checks</a></div>
+        <div class="footer-col"><h4>Quick Dial</h4><a href="tel:112">112 — All Emergencies</a><a href="tel:108">108 — Ambulance</a><a href="tel:100">100 — Police</a><a href="tel:14567">14567 — Senior Helpline</a><a href="tel:104">104 — Health Helpline</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MediShield Care | PS5 Hackathon – Problem 5</span>
+      <a href="#top" class="back-to-top">↑ Top</a>
+    </div>
+  </div>
+</footer>
+
+<button class="sos-fab" id="sosFab" aria-label="Emergency SOS"><span class="fab-icon">🆘</span><span class="fab-text">SOS</span></button>
+
+<div class="sos-overlay hidden" id="sosOverlay" role="dialog" aria-modal="true">
+  <div class="sos-modal">
+    <div class="sos-modal-header">
+      <div class="sos-modal-header-left"><span class="sos-flash-icon">🚨</span><div><div class="sos-modal-title">Emergency SOS Activated</div><div class="sos-modal-subtitle">Your location is being prepared</div></div></div>
+      <button class="sos-close" id="sosCloseBtn">✕</button>
+    </div>
+    <div class="sos-modal-body">
+      <div class="location-box">
+        <div class="location-box-header">📍 YOUR CURRENT LOCATION</div>
+        <div class="location-status" id="sosLocationStatus">Detecting location…</div>
+        <div class="location-coords font-mono" id="sosCoords"></div>
+        <div class="location-actions">
+          <button class="loc-btn primary" id="sosGetLocation">🔄 Refresh</button>
+          <a class="loc-btn" id="sosLocationForMaps" href="#" target="_blank">🗺️ View Map</a>
+          <button class="loc-btn" id="sosCopyBtn">📋 Copy</button>
+        </div>
+      </div>
+      <div class="call-grid">
+        <a href="tel:112" class="call-btn call-red"><span class="call-icon">🆘</span><span class="call-info"><span class="call-num">112</span><span class="call-label">All Emergencies</span></span></a>
+        <a href="tel:108" class="call-btn call-orange"><span class="call-icon">🚑</span><span class="call-info"><span class="call-num">108</span><span class="call-label">Ambulance</span></span></a>
+        <a href="tel:100" class="call-btn call-blue"><span class="call-icon">👮</span><span class="call-info"><span class="call-num">100</span><span class="call-label">Police</span></span></a>
+        <a href="tel:14567" class="call-btn call-teal"><span class="call-icon">🧓</span><span class="call-info"><span class="call-num">14567</span><span class="call-label">Senior Helpline</span></span></a>
+      </div>
+      <div class="share-section mt-16">
+        <div class="share-title">📲 SHARE YOUR LOCATION</div>
+        <div class="share-buttons">
+          <a id="sosWhatsApp" href="#" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp Emergency Contact</a>
+          <a id="sosMaps" href="#" target="_blank" class="share-btn share-maps">🗺️ Google Maps</a>
+          <button id="sosCopyBtn2" class="share-btn share-copy" onclick="SOS.copyLocation()">📋 Copy Location</button>
+        </div>
+        <div class="sos-contact-row" id="sosSavedContact"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicine Safety — MediShield Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="top-alert">
+  🚨 India Emergency: <strong>112</strong> &nbsp;|&nbsp; 🚑 Ambulance: <strong>108</strong> &nbsp;|&nbsp; 🧓 Elder Helpline: <strong>14567</strong>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🏥</span>
+      <div class="logo-text">
+        <span class="logo-title">MediShield Care</span>
+        <span class="logo-sub">Senior Health &amp; Emergency Directory</span>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="emergency.html">Emergency</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="medicine-safety.html" class="active">Medicine Safety</a>
+      <a href="monthly-checks.html">Monthly Checks</a>
+      <a href="emergency.html" class="nav-sos-btn" id="navSOSBtn">🆘 SOS</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero" id="top">
+  <div class="container page-hero-content">
+    <div class="page-badge">💊 MEDICATION SAFETY</div>
+    <h1>Medicine Safety<br /><span class="hero-accent">Review the List Regularly</span></h1>
+    <p>Taking multiple medications can be complex. A regular review with your doctor or pharmacist helps keep you safe. Here's everything you need to know.</p>
+    <div class="hero-actions">
+      <a href="#why-review" class="btn btn-white btn-lg">📋 Why Review?</a>
+      <a href="#daily-habits" class="btn btn-outline btn-lg">✅ Daily Habits</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY REVIEW ═══ -->
+<section class="section section-dark" id="why-review">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-label light">MEDICATION REVIEW</span>
+      <h2>Why Seniors Should Review Their Medication List</h2>
+      <p class="section-desc">A doctor or pharmacist can help check whether every medicine is still needed and appropriate for your current health.</p>
+    </div>
+
+    <div class="two-col-img">
+      <div>
+        <img src="images/image2.jpg" alt="Why Seniors Should Review Their Medication List — infographic showing 5 key reasons" style="box-shadow:0 20px 50px rgba(0,0,0,.35);width:100%;" />
+      </div>
+      <div>
+        <div class="reason-cards">
+          <div class="reason-card b-red">
+            <div class="reason-card-icon">🗓️</div>
+            <h4>1. Outdated Medications</h4>
+            <p>Expired or unused drugs can lose their effectiveness or become unsafe. Remove expired medicines safely — do not use them past their expiry date.</p>
+          </div>
+          <div class="reason-card b-orange">
+            <div class="reason-card-icon">⚡</div>
+            <h4>2. Duplicate Ingredients</h4>
+            <p>Different brands may contain the same active ingredient, leading to accidental overdose. Always check with your pharmacist before combining medicines.</p>
+          </div>
+          <div class="reason-card b-yellow">
+            <div class="reason-card-icon">⚠️</div>
+            <h4>3. Harmful Interactions</h4>
+            <p>Prescription medicines, over-the-counter drugs and supplements can interact. Some interactions reduce effectiveness; others can be dangerous.</p>
+          </div>
+          <div class="reason-card b-blue">
+            <div class="reason-card-icon">📈</div>
+            <h4>4. Changing Doses</h4>
+            <p>As your body and health change with age, your dosages may need adjustment. Kidney and liver function significantly affect how medicines are processed.</p>
+          </div>
+          <div class="reason-card b-teal span-2">
+            <div class="reason-card-icon">👨‍⚕️</div>
+            <h4>5. Keep All Providers Informed</h4>
+            <p>Ensure every doctor, specialist and pharmacist you see has the exact same medication list — including vitamins, supplements and over-the-counter drugs.</p>
+          </div>
+        </div>
+        <div class="note note-danger mt-20" style="margin-top:20px;">
+          <span class="note-icon">🚫</span>
+          <span><strong>Never</strong> start, stop or change a dose without advice from a qualified healthcare professional.</span>
+        </div>
+        <blockquote class="med-quote">
+          "Always discuss medication changes with your healthcare professional."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MY MEDICINE LIST ═══ -->
+<section class="section section-white" id="medicine-list">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">MY MEDICINE LIST</span>
+      <h2>Personal Medicine List — Interactive</h2>
+      <p class="section-desc">Fill in your medicines below. Auto-saved to your browser. Show this list to every doctor and pharmacist.</p>
+    </div>
+
+    <div class="action-row">
+      <span class="save-status saved" id="saveStatus">✅ Saved automatically</span>
+      <button class="btn btn-primary btn-sm" onclick="window.print()">🖨️ Print Medicine List</button>
+    </div>
+
+    <div style="overflow-x:auto;margin-top:16px;border-radius:var(--radius);box-shadow:var(--shadow);">
+      <table class="pharmacy-table" style="min-width:800px;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Medicine Name</th>
+            <th>Strength / Dose</th>
+            <th>When to Take</th>
+            <th>Prescribed By</th>
+            <th>Reason for Use</th>
+            <th>Expiry Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="text-align:center;font-weight:800;">1</td><td><input type="text" data-store="ml_m1_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m1_dose" placeholder="e.g. 500mg" /></td><td><input type="text" data-store="ml_m1_when" placeholder="e.g. After breakfast" /></td><td><input type="text" data-store="ml_m1_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m1_reason" placeholder="e.g. Blood pressure" /></td><td><input type="text" data-store="ml_m1_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">2</td><td><input type="text" data-store="ml_m2_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m2_dose" placeholder="e.g. 10mg" /></td><td><input type="text" data-store="ml_m2_when" placeholder="e.g. Before bed" /></td><td><input type="text" data-store="ml_m2_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m2_reason" placeholder="e.g. Diabetes" /></td><td><input type="text" data-store="ml_m2_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">3</td><td><input type="text" data-store="ml_m3_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m3_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m3_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m3_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m3_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m3_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">4</td><td><input type="text" data-store="ml_m4_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m4_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m4_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m4_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m4_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m4_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">5</td><td><input type="text" data-store="ml_m5_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m5_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m5_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m5_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m5_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m5_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">6</td><td><input type="text" data-store="ml_m6_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m6_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m6_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m6_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m6_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m6_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">7</td><td><input type="text" data-store="ml_m7_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m7_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m7_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m7_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m7_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m7_exp" placeholder="MM/YYYY" /></td></tr>
+          <tr><td style="text-align:center;font-weight:800;">8</td><td><input type="text" data-store="ml_m8_name" placeholder="Medicine name" /></td><td><input type="text" data-store="ml_m8_dose" placeholder="Strength" /></td><td><input type="text" data-store="ml_m8_when" placeholder="Timing" /></td><td><input type="text" data-store="ml_m8_dr" placeholder="Doctor name" /></td><td><input type="text" data-store="ml_m8_reason" placeholder="Reason" /></td><td><input type="text" data-store="ml_m8_exp" placeholder="MM/YYYY" /></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note note-info mt-16">
+      <span class="note-icon">📌</span>
+      Include ALL medicines — prescriptions, over-the-counter drugs, vitamins and supplements. Update this list whenever a medicine is added, changed or stopped.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAILY HABITS ═══ -->
+<section class="section section-bg" id="daily-habits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">DAILY HABITS</span>
+      <h2>Simple Daily Medicine-Safety Habits</h2>
+      <p class="section-desc">Use a routine that is easy for the senior and caregiver to follow every day.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:380px 1fr;gap:50px;align-items:start;">
+      <div>
+        <img src="images/image5.jpg" alt="8 Medication Safety Tips for Seniors infographic" style="border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;" />
+      </div>
+      <div>
+        <div class="habit-cards">
+          <div class="habit-card">
+            <span class="habit-icon">📋</span>
+            <div><h4>Keep One Updated List</h4><p>Include medicine name, strength, dose, time and reason for taking it. Share with every healthcare provider.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">⏰</span>
+            <div><h4>Use a Reminder System</h4><p>A pill organiser, calendar, or phone alarm can support the routine and help avoid missed doses.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">🏷️</span>
+            <div><h4>Follow the Label</h4><p>Take medicines exactly as prescribed. Never share medicines with another person — even if symptoms seem similar.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">🔔</span>
+            <div><h4>Report Side Effects Promptly</h4><p>Contact the doctor or pharmacist if any new symptom appears after taking a medicine — dizziness, confusion, rash or others.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">🗄️</span>
+            <div><h4>Store Medicines Safely</h4><p>Keep in original packaging, in a cool dry place, away from heat, moisture, sunlight and children.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">👩‍⚕️</span>
+            <div><h4>Tell All Your Doctors</h4><p>Tell every doctor and specialist about all medicines — including vitamins, supplements and herbal remedies.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">🛒</span>
+            <div><h4>Order Online with Care</h4><p>Before purchasing from an online pharmacy, ask your doctor if the company is legitimate and licensed by CDSCO.</p></div>
+          </div>
+          <div class="habit-card">
+            <span class="habit-icon">💉</span>
+            <div><h4>Don't Skip Immunizations</h4><p>Several vaccines are recommended for seniors (flu, pneumonia, shingles). Ask your doctor for a vaccination schedule.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>MEDICINES. MANAGED. SAFELY.</h2>
+    <p>Keep your medicine list updated and reviewed regularly with your doctor.</p>
+    <div class="cta-actions">
+      <a href="#medicine-list" class="btn btn-white btn-lg">📋 Update My List</a>
+      <a href="monthly-checks.html" class="btn btn-outline-white btn-lg">📅 Monthly Checks →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo" style="margin-bottom:10px;"><span class="logo-icon">🏥</span><div class="logo-text"><span class="logo-title">MediShield Care</span><span class="logo-sub">Senior Health &amp; Emergency Directory</span></div></div><p>Stay prepared • Stay safe • Stay connected</p></div>
+      <div class="footer-links-grid">
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="emergency.html">Emergency &amp; SOS</a><a href="pharmacy.html">Pharmacy &amp; Directory</a><a href="medicine-safety.html">Medicine Safety</a><a href="monthly-checks.html">Monthly Checks</a></div>
+        <div class="footer-col"><h4>Quick Dial</h4><a href="tel:112">112 — All Emergencies</a><a href="tel:108">108 — Ambulance</a><a href="tel:100">100 — Police</a><a href="tel:14567">14567 — Senior Helpline</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 MediShield Care | PS5 Hackathon – Problem 5</span><a href="#top" class="back-to-top">↑ Top</a></div>
+  </div>
+</footer>
+
+<button class="sos-fab" id="sosFab" aria-label="Emergency SOS"><span class="fab-icon">🆘</span><span class="fab-text">SOS</span></button>
+<div class="sos-overlay hidden" id="sosOverlay" role="dialog" aria-modal="true">
+  <div class="sos-modal">
+    <div class="sos-modal-header"><div class="sos-modal-header-left"><span class="sos-flash-icon">🚨</span><div><div class="sos-modal-title">Emergency SOS Activated</div><div class="sos-modal-subtitle">Your location is being prepared</div></div></div><button class="sos-close" id="sosCloseBtn">✕</button></div>
+    <div class="sos-modal-body">
+      <div class="location-box"><div class="location-box-header">📍 YOUR CURRENT LOCATION</div><div class="location-status" id="sosLocationStatus">Detecting location…</div><div class="location-coords font-mono" id="sosCoords"></div><div class="location-actions"><button class="loc-btn primary" id="sosGetLocation">🔄 Refresh</button><a class="loc-btn" id="sosLocationForMaps" href="#" target="_blank">🗺️ Map</a><button class="loc-btn" id="sosCopyBtn">📋 Copy</button></div></div>
+      <div class="call-grid"><a href="tel:112" class="call-btn call-red"><span class="call-icon">🆘</span><span class="call-info"><span class="call-num">112</span><span class="call-label">All Emergencies</span></span></a><a href="tel:108" class="call-btn call-orange"><span class="call-icon">🚑</span><span class="call-info"><span class="call-num">108</span><span class="call-label">Ambulance</span></span></a><a href="tel:100" class="call-btn call-blue"><span class="call-icon">👮</span><span class="call-info"><span class="call-num">100</span><span class="call-label">Police</span></span></a><a href="tel:14567" class="call-btn call-teal"><span class="call-icon">🧓</span><span class="call-info"><span class="call-num">14567</span><span class="call-label">Senior Helpline</span></span></a></div>
+      <div class="share-section mt-16"><div class="share-title">📲 SHARE YOUR LOCATION</div><div class="share-buttons"><a id="sosWhatsApp" href="#" target="_blank" class="share-btn share-whatsapp">💬 WhatsApp Emergency Contact</a><a id="sosMaps" href="#" target="_blank" class="share-btn share-maps">🗺️ Google Maps</a></div><div class="sos-contact-row" id="sosSavedContact"></div></div>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>
+
